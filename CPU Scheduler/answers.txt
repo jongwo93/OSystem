@@ -1,0 +1,47 @@
+CS 2200 Spring 2017
+Project 4
+Name:
+GT Number:
+
+Problem 1B
+----------
+1CPU = 67.6s
+2CPU = 35.8s
+4CPU = 33.1s
+There is linear relationship from 1 to 2 according to result, however, there should not be a linear relationship due to increase of CPU because in nature of first come first serve work fairly in order of arrival therefore it just depends on the arrange of tasks.
+
+Problem 2B
+----------
+800ms
+context switch = 135
+exe time = 67.6s
+time spent in ready state = 325.7s
+
+600ms
+160
+67.6
+314.5
+
+400ms
+203
+67.6
+298.8
+
+200ms
+362
+67.5
+285.2
+
+Waiting time did decrease from 800ms to 200ms consistently however, in real OS the shortest timeslice possible is usually not the best choice because it will have to spend more time doing the context switching if the time slice is too small, there will be an optimum time slice size that will result the shortest waiting time in real OS.
+/* Fix me */
+
+Problem 3B
+----------
+
+Because when we code it, we dont know about the hardware side, therefore, we dont know how fast it can process. So, we can only approximate in real life.
+
+FCFS = 390.7 s
+RR = 325.7s
+SJRF = 160.1s
+Shortest job remaining first had lowest wait time since when new process has lower remaining time than that of currently running process, scheduler preempts the latter for new process then finishes the job with shorter remaining time therefore the wait time should usually be shorter than FCFS.
+

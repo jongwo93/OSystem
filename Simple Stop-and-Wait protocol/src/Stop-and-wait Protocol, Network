@@ -1,0 +1,4 @@
+The stop-and-wait Protocol for the reliable transfer of data through an artificial network. 
+
+Stop-and-wait protocol with ACK, NACK, and re-transmissions.
+Simple packtization and transmission.

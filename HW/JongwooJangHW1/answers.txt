@@ -1,0 +1,48 @@
+CS 2200 Spring 2017
+Homework 1
+===================
+NAME HERE
+Spring 2017
+===================
+
+Problem 1
+---------
+~~~~~~
+Part A
+~~~~~~
+ISA is an abstract interface that provides the communication between Operating systems/software and Hardwares. 
+it's like a contract between hardware and software.
+for example, if processor implements isa, software is built on certain isa, then it will work on any hardwares.
+
+~~~~~~
+Part B
+~~~~~~
+
+Stack pointer points to the top of the stack(last thing pushed to the stack) within the activation records, which allows to save/load states to/from stack. For our lc2200, we have a registers dedicated to stack pointer.
+
+It grows downward from high to low memory until its limit, when it hits the limit any call after that is considered stack overflow.
+
+~~~~~~
+Part C
+~~~~~~
+Caller Part :
+1. Caller saves any of t used t registers on the stack
+2. Caller saves any of additional parameters on the stack (so if a0-a2 are already being used, any additional will be on stack)
+3. caller saves any of additional return values on the stack if there is more than one return values needed(if v0 is already being used)
+4. caller saves previous return address on stack (so you can go back to your return address )
+5. Executes Jump and Link instruction
+
+Callee Part :
+6. Callee stores old frame pointer to stack(so later we can trace back such as recursion)
+7. caller stores s registers (if you are going to use them)
+8. Callee stores local variable onto stack
+9. Callee restores s registers back to its original values(if you used them)
+10. Callee restores frame pointer so that $fp is not pointing at previous activation stack frame.
+11. Callee Jump and Link back to return address without saving the return address // JAL $ra, $zero(not savving the return address)
+
+Caller Part: 
+12. Caller restores the returning address to $ra
+13. Caller stores return values
+14. Caller deallocate spaces for parameters by moving sp. 
+15. Caller restore any saved t registers from stack back to original value.
+
